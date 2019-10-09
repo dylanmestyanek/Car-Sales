@@ -8,22 +8,22 @@ import Total from './components/Total';
 
 const App = ({ additionalPrice, car, additionalFeatures }) => {
  
-  const removeFeature = item => {
-    // dispatch an action here to remove an item
+  const removeItem = item => {
+    console.log('working')
   };
 
   const buyItem = item => {
-    // dipsatch an action here to add an item
+    console.log(item)
   };
 
   return (
     <div className="boxes">
       <div className="box">
         <Header car={car} />
-        <AddedFeatures car={car} />
+        <AddedFeatures removeItem={removeItem} car={car} />
       </div>
       <div className="box">
-        <AdditionalFeatures store={additionalFeatures} />
+        <AdditionalFeatures store={additionalFeatures} buyItem={buyItem} />
         <Total car={car} additionalPrice={additionalPrice} />
       </div>
     </div>
