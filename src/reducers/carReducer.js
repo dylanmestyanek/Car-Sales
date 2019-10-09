@@ -1,4 +1,3 @@
-import { bindActionCreators } from "redux";
 
 export const initialState = {
     additionalPrice: 0,
@@ -17,10 +16,11 @@ export const initialState = {
     ]
   };
 
-export const carReducer = state => {
-    switch(action.type){
-        default:
+export const carReducer = (state = initialState, action) => {
+    console.log(state)
+    // switch(action.type){
+        // default:
             return state;
-    }
+    // }
 }
   
