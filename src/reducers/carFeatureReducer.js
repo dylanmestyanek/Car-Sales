@@ -7,7 +7,7 @@ export const initialState = {
       name: '2019 Ford Mustang',
       image:
         'https://cdn.motor1.com/images/mgl/0AN2V/s1/2019-ford-mustang-bullitt.jpg',
-      features: [{name: 'poop'}, {name: 'shit'}]
+      features: []
     },
     additionalFeatures: [
       { id: 1, name: 'V-6 engine', price: 1500 },
@@ -20,7 +20,16 @@ export const initialState = {
 export const carFeatureReducer = (state = initialState, action) => {
     switch(action.type){
       case REMOVE_ITEM:
-        return state;
+        return {
+          ...state,
+          car: {
+            ...state.car,
+            features: state.car.features.filter(feature => {
+              return feature.id !== action.payload.id
+            })
+          },
+          additionalFeatures: [...state.additionalFeatures, action.payload]
+        };
       case ADD_ITEM:
         console.log(action.payload)
         return {

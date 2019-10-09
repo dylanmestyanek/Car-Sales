@@ -16,7 +16,7 @@ const App = ({
   addItem
 }) => {
   const removeFeature = item => {
-    removeItem()
+    removeItem(item)
   };
 
   const buyItem = item => {
