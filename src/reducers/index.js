@@ -1,1 +1,1 @@
-export { carReducer } from "./carReducer"
+export { carFeatureReducer } from "./carFeatureReducer"
